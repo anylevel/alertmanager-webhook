@@ -1,0 +1,8 @@
+port: ":80"
+sslEnabled: false
+sslKeyFileName: none
+sslCertFileName: none
+gitlabURL: http://localhost/kek
+gitlabAPIPrefix: localhost
+gitlabAccessToken: keek
+gitlabProjectID: 1

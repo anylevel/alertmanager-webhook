@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-webhook
+data:
+  config.yaml: |
+    port: ":80"
+    sslEnabled: false
+    sslKeyFileName: none
+    sslCertFileName: none
+    gitlabURL: http://gitlab.git.svc.cluster.local/
+    gitlabAPIPrefix: api/v4/projects/
+    gitlabAccessToken: xTyyEKDxA5kixHmD5nkL
+    gitlabProjectID: 2

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alerts
+spec:
+  selector:
+    matchLabels:
+      app: alerts
+  template:
+    metadata:
+      labels:
+        app: alerts
+    spec:
+      volumes:
+      - name: config
+        configMap: 
+          name: config-webhook
+      containers:
+      - name: alert
+        image: vadim46/alerting:1.1.4
+        ports:
+        - name: http
+          containerPort: 80
+        volumeMounts:
+        - mountPath: /app/config
+          name: config

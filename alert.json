@@ -1,0 +1,56 @@
+{
+  "receiver": "gitlab-alerts",
+  "status": "firing",
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "BootTimeTooHigh",
+        "app": "prometheus",
+        "app_kubernetes_io_managed_by": "Helm",
+        "chart": "prometheus-15.5.4",
+        "component": "node-exporter",
+        "heritage": "Helm",
+        "instance": "192.168.122.6:9100",
+        "job": "kubernetes-service-endpoints",
+        "namespace": "default",
+        "node": "worker",
+        "release": "loki",
+        "service": "loki-prometheus-node-exporter",
+        "severity": "fatal"
+      },
+      "annotations": {
+        "description": "192.168.122.6:9100 had a boot time of (current value: 1.688934769e+09s).  This is unacceptable :P",
+        "summary": "Boot time took too long on 192.168.122.6:9100"
+      },
+      "startsAt": "2023-07-10T00:09:48.069Z",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "generatorURL": "http://loki-prometheus-server-66f45c7555-8rcsj:9090/graph?g0.expr=node_boot_time_seconds+%3E+0&g0.tab=1",
+      "fingerprint": "590ff8183591ada7"
+    }
+  ],
+  "groupLabels": {},
+  "commonLabels": {
+    "alertname": "BootTimeTooHigh",
+    "app": "prometheus",
+    "app_kubernetes_io_managed_by": "Helm",
+    "chart": "prometheus-15.5.4",
+    "component": "node-exporter",
+    "heritage": "Helm",
+    "instance": "192.168.122.6:9100",
+    "job": "kubernetes-service-endpoints",
+    "namespace": "default",
+    "node": "worker",
+    "release": "loki",
+    "service": "loki-prometheus-node-exporter",
+    "severity": "fatal"
+  },
+  "commonAnnotations": {
+    "description": "192.168.122.6:9100 had a boot time of (current value: 1.688934769e+09s).  This is unacceptable :P",
+    "summary": "Boot time took too long on 192.168.122.6:9100"
+  },
+  "externalURL": "http://localhost:9093",
+  "version": "4",
+  "groupKey": "{}:{}",
+  "truncatedAlerts": 0
+}
