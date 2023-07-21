@@ -17,7 +17,7 @@ spec:
           name: config-webhook
       containers:
       - name: alert
-        image: vadim46/alerting:1.1.4
+        image: vadim46/alerting:1.1.7
         ports:
         - name: http
           containerPort: 80

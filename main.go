@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-
+  "crypto/tls"
 	"gopkg.in/yaml.v3"
 )
 
@@ -108,7 +108,8 @@ func sendAlert(w http.ResponseWriter, r *http.Request) {
 	}
 	req.Header.Add("Content-Type", "application/json")
 	req.Header.Add("PRIVATE-TOKEN", config.GitlabAccessToken)
-	client := &http.Client{}
+	tr := &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}
+	client := &http.Client{Transport: tr}
 	resp, errResp := client.Do(req)
 	if errResp != nil {
 		writeError(w, errResp)
